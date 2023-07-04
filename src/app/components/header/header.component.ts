@@ -1,3 +1,4 @@
+//$ ng g c home
 import { Component } from '@angular/core';
 
 @Component({
