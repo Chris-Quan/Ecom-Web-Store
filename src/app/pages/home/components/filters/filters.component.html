@@ -1,0 +1,17 @@
+<mat-expansion-panel *ngIf="categories">
+    <mat-expansion-panel-header>
+      <mat-panel-title> CATEGORIES </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-list >
+    <mat-button-toggle-group vertical class="w-32 focus:outline-none">
+          <mat-button-toggle class =
+          "focus:outline-none
+          text-lg"
+          
+          
+          *ngFor="let category of categories"[value]="category" (click)="onShowCategory(category)">{{ category }}</mat-button-toggle>
+    
+  </mat-button-toggle-group>
+  </mat-list>
+  </mat-expansion-panel>
+
