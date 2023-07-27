@@ -1,5 +1,7 @@
 # Live Test Link
 https://cq-ecom-store.netlify.app
+you can use 4242 4242 4242 4242 as the credit card for checkout for testing purposes
+
 
 <img src ="website-screenshot.jpeg" alt="website screenshot"/>
 
