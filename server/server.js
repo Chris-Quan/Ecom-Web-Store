@@ -2,13 +2,15 @@ const express = require("express");
 const cors = require("cors");
 const bodyparser = require("body-parser");
 
+require('dotenv').config();
+
 const app = express();
 app.use(express.static("public"));
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 app.use(cors({ origin: true, credentials: true }));
 
-const stripe = require("stripe")("apikey here");
+const stripe = require("stripe")(process.env.STRIPE_API_KEY);
 
 app.post("/checkout", async (req, res, next) => {
     try {
@@ -23,7 +25,7 @@ app.post("/checkout", async (req, res, next) => {
                 type: 'fixed_amount',
                 fixed_amount: {
                     amount: 0,
-                    currency: 'usd',
+                    currency: 'cad',
                 },
                 display_name: 'Free shipping',
                 // Delivers between 5-7 business days
@@ -44,7 +46,7 @@ app.post("/checkout", async (req, res, next) => {
                 type: 'fixed_amount',
                 fixed_amount: {
                     amount: 1500,
-                    currency: 'usd',
+                    currency: 'cad',
                 },
                 display_name: 'Next day air',
                 // Delivers in exactly 1 business day
@@ -63,7 +65,7 @@ app.post("/checkout", async (req, res, next) => {
             ],
            line_items:  req.body.items.map((item) => ({
             price_data: {
-              currency: 'usd',
+              currency: 'cad',
               product_data: {
                 name: item.name,
                 images: [item.product]

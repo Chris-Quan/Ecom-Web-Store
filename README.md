@@ -1,3 +1,8 @@
+# Live Test Link
+https://cq-ecom-store.netlify.app
+
+<img src ="website-screenshot.jpeg" alt="website screenshot"/>
+
 # Store
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.1.

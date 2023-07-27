@@ -80,7 +80,7 @@ export class CartComponent {
   }
 
   onCheckout(): void{
-    this.http.post('http://localhost:4242/checkout', {
+    this.http.post('https://f90d-99-226-37-109.ngrok-free.app/checkout', {
       items: this.cart.items
     }).subscribe(async(res:any)=> {
     let stripe = await loadStripe('pk_test_51NY6H5FeWoxjIutKaIZWqfSP4oRkSmrmDvG8UpEpPCp6GFDw10q5NrMAjRiY0NfaI5ehDLFhUk8aRupdIqYfgYAL00gyhkeIe7');
